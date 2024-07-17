@@ -1,5 +1,6 @@
 const dropdowns = document.querySelectorAll(".dropdown select");
 const button = document.querySelector("form button");
+const msg=document.querySelector("form .msg");
 
 for (let select of dropdowns) {
     for (let currcode in countryList) {
@@ -29,7 +30,7 @@ button.addEventListener("click", async (evt)=>{
     evt.preventDefault();
     let amount = document.querySelector(".amount #amount");
     let amtval=amount.value
-    if(amtval ==""|| amtval<1) {
+    if(!Number(amtval) || amtval =="" || amtval<1) {
         amtval=1;
         amount.value="1";
     }
@@ -38,13 +39,9 @@ button.addEventListener("click", async (evt)=>{
     let to=selects[1].value.toLowerCase();
     let response = await fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${from}.json`)
     let data=await response.json();
-    console.log(data[from][to]);
-    // console.log(data["inr"]);
+    console.log(data[from][to]*amtval);
+    msg.innerText=`${amtval} ${from} = ${data[from][to]*amtval} ${to}`;
 })
 
-const func = async()=>{
-    let response = await fetch("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json");
-    let data = await response.json();
-    console.log(data["eur"]["inr"]);
-};
+
 
