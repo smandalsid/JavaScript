@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency converter</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
@@ -18,30 +19,27 @@
                 <div class="from">
                     <label for="">From</label><br>
                     <div class="select-container">
-                        <img src="https://flagsapi.com/IN/flat/64.png">
+                        <img src="https://flagsapi.com/US/flat/64.png">
                         <select name="from" id="">
-                            <option value="INR">INR</option>
-                            <option value="USD">USD</option>
-                            <option value="AUD">AUD</option>
-                            <option value="EUR">EUR</option>
                         </select>
                     </div>
                 </div>
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
                 <div class="to">
                     <label for="">To</label><br>
                     <div class="select-container">
                         <img src="https://flagsapi.com/IN/flat/64.png">
-                        <select name="from" id="">
-                            <option value="INR">INR</option>
-                            <option value="USD">USD</option>
-                            <option value="AUD">AUD</option>
-                            <option value="EUR">EUR</option>
+                        <select name="to" id="">
                         </select>
                     </div>
                 </div>
             </div>
+            <br>
+            <div class="msg">1 USD = 80 INR</div>
+            <button>Get exchange rate</button>
         </form>
     </div>
+    <script src="./codes.js"></script>
     <script src="./app.js"></script>
 </body>
 </html>
